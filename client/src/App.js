@@ -28,10 +28,28 @@ function App() {
       </Box>
       <div>
         <Routes>
-          <Route path="/" element={<Home></Home>}></Route>
-          <Route path="/posts" element={<Posts></Posts>}></Route>
-          <Route path="/postEdit" element={<PostEdit></PostEdit>}></Route>
-          <Route path="/postDetail" element={<PostDetail></PostDetail>}></Route>
+          <Route exact path="/" element={<Home></Home>}></Route>
+          <Route exact path="/posts" element={<Posts></Posts>}></Route>
+          <Route
+            exact
+            path="/users/:id/posts"
+            element={<Posts></Posts>}></Route>
+          <Route
+            exact
+            path="/tags/:name/posts"
+            element={<Posts></Posts>}></Route>
+          <Route
+            exact
+            path="/posts/new"
+            element={<PostEdit></PostEdit>}></Route>
+          <Route
+            exact
+            path="/posts/:id/edit"
+            element={<PostEdit></PostEdit>}></Route>
+          <Route
+            exact
+            path="/posts/:id"
+            element={<PostDetail></PostDetail>}></Route>
         </Routes>
       </div>
     </div>
