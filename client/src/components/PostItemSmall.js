@@ -17,16 +17,10 @@ function PostItemSmall({ post }) {
         </Typography>
         <img alt={post.title} height="50" width="50" src={post.imageUrl} />
         <p>{post.body}</p>
-        <ul>
+        <div>
           {post.tags &&
-            post.tags.map((tag) => {
-              return (
-                <li key={tag}>
-                  <Tag tagName={tag} />
-                </li>
-              );
-            })}
-        </ul>
+            post.tags.map((tag) => <Tag key={tag} tagName={tag}></Tag>)}
+        </div>
       </div>
     </>
   );

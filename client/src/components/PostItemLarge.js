@@ -1,31 +1,28 @@
-import { Typography } from '@mui/material';
 import Tag from './Tag';
 import UserItemSmall from './UserItemSmall';
 
 function PostItemLarge({ post }) {
   return (
     <>
+      <UserItemSmall user={post.author} />
+
       <div>
-        Skrivet av:
-        <UserItemSmall user={post.author} />
+        {post.tags &&
+          post.tags.map((tag) => <Tag key={tag} tagName={tag}></Tag>)}
       </div>
       <div>
-        <div>Skrivet: {post.createdAt}</div>
-        <Typography variant="h5" component="h3">
-          {post.title}
-        </Typography>
         <img alt={post.title} height="50" width="50" src={post.imageUrl} />
+      </div>
+      <div>
+        <p>{post.createdAt}</p>
+        <p>{post.title}</p>
         <p>{post.body}</p>
-        <ul>
-          {post.tags &&
-            post.tags.map((tag) => {
-              return (
-                <li key={tag}>
-                  <Tag tagName={tag} />
-                </li>
-              );
-            })}
-        </ul>
+      </div>
+      <div>
+        {post.comments &&
+          post.comments.map((comment) => (
+            <p key={`commentId_${comment.id}`}>{comment.title}</p>
+          ))}
       </div>
     </>
   );
