@@ -2,10 +2,9 @@ import Tag from './Tag';
 import UserItemSmall from './UserItemSmall';
 
 function PostItemLarge({ post }) {
-  return (
+  return post ? (
     <>
       <UserItemSmall user={post.author} />
-
       <div>
         {post.tags &&
           post.tags.map((tag) => <Tag key={tag} tagName={tag}></Tag>)}
@@ -18,13 +17,9 @@ function PostItemLarge({ post }) {
         <p>{post.title}</p>
         <p>{post.body}</p>
       </div>
-      <div>
-        {post.comments &&
-          post.comments.map((comment) => (
-            <p key={`commentId_${comment.id}`}>{comment.title}</p>
-          ))}
-      </div>
     </>
+  ) : (
+    <p>Inlägget kunde inte visas</p>
   );
 }
 
