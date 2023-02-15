@@ -1,6 +1,6 @@
 import { Button } from '@mui/material';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import CommentList from '../components/CommentList';
 import PostItemLarge from '../components/PostItemLarge';
 import { getOne } from '../models/PostModel';
@@ -26,7 +26,9 @@ function PostDetail() {
         <p>Inget inlägg att visa</p>
       )}
 
-      <Button variant="filled">Ändra</Button>
+      <Button variant="filled">
+        <Link to={`/posts/${postId}/edit`}>Ändra</Link>
+      </Button>
       <Button variant="filled">Ta bort</Button>
     </>
   );
