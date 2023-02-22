@@ -4,7 +4,7 @@ import PostList from '../components/PostList';
 function Posts() {
   const location = useLocation();
   console.log(location);
-  return <PostList path={location.pathname} />;
+  return <PostList pathname={location.pathname} />;
 }
 
 export default Posts;

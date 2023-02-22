@@ -1,35 +1,41 @@
 import { Button } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import CommentList from '../components/CommentList';
+import CommentForm from '../components/CommentForm';
+
 import PostItemLarge from '../components/PostItemLarge';
-import { getOne } from '../models/PostModel';
+import { addComment, getOne } from '../models/PostModel';
 
 function PostDetail() {
-  //Ta emot ett id för att hämta ett inlägg posts/:id
-  const [post, setPost] = useState({});
   const params = useParams();
   const postId = params.id;
+
+  const [post, setPost] = useState({});
+
   useEffect(() => {
     getOne(postId).then((post) => setPost(post));
   }, [postId]);
-  console.log(post);
+
+  function onCommentAdd(comment) {
+    addComment(postId, comment).then((post) => setPost(post));
+  }
 
   return (
     <>
-      {post ? (
-        <>
-          <PostItemLarge post={post} />
-          <CommentList comments={post.comments} />
-        </>
-      ) : (
-        <p>Inget inlägg att visa</p>
-      )}
-
-      <Button variant="filled">
-        <Link to={`/posts/${postId}/edit`}>Ändra</Link>
-      </Button>
-      <Button variant="filled">Ta bort</Button>
+      <PostItemLarge post={post} />
+      <CommentForm onSave={onCommentAdd}></CommentForm>
+      <div>
+        {post.comments &&
+          post.comments.map((comment, i) => (
+            <p key={`comment_${i}`}>
+              {comment.title}
+              <br /> {comment.body}
+            </p>
+          ))}
+      </div>
+      <Link to={`/posts/${postId}/edit`}>
+        <Button variant="filled">Ändra</Button>
+      </Link>
     </>
   );
 }

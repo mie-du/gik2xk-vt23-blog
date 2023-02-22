@@ -7,7 +7,7 @@ function UserItemSmall({ user }) {
       <Link to={`/users/${user.id}/posts`}>{user.username}</Link>
     </>
   ) : (
-    <p>Användaren kunde inte visas</p>
+    <>Användaruppgifter saknas</>
   );
 }
 

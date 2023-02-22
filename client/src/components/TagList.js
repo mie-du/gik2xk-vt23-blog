@@ -8,7 +8,6 @@ function TagList() {
   useEffect(() => {
     getAll().then((tags) => setTags(tags));
   }, []);
-
   return (
     <ul>
       {tags &&

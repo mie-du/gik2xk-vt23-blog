@@ -19,7 +19,7 @@ function PostItemLarge({ post }) {
       </div>
     </>
   ) : (
-    <p>Inlägget kunde inte visas</p>
+    <>Inlägg saknas</>
   );
 }
 

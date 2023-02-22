@@ -2,12 +2,13 @@ import { useEffect, useState } from 'react';
 import { getAll } from '../models/PostModel';
 import PostItemSmall from './PostItemSmall';
 
-function PostList({ path }) {
+function PostList({ pathname }) {
+  console.log(pathname);
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    getAll(path).then((posts) => setPosts(posts));
-  }, [path]);
+    getAll(pathname).then((posts) => setPosts(posts));
+  }, [pathname]);
 
   return (
     <ul>
