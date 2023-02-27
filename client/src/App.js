@@ -5,28 +5,28 @@ import Home from './views/Home';
 import Posts from './views/Posts';
 import PostEdit from './views/PostEdit';
 import PostDetail from './views/PostDetail';
+import { Container } from '@mui/system';
 
 function App() {
   return (
     <div className="App">
-      <h1>Blogg</h1>
+      <AppBar position="fixed">
+        <Toolbar>
+          <Box sx={{ flexGrow: 1 }}>
+            <Typography variant="h1" component="h1">
+              <Link to="/">GIK2XK Blogg</Link>
+            </Typography>
+          </Box>
+          <Typography marginRight="1rem" variant="h6" component="div">
+            <Link to="/posts">Alla inlägg</Link>
+          </Typography>
+          <Typography variant="h6" component="div">
+            <Link to="/posts/new">Skapa inlägg</Link>
+          </Typography>
+        </Toolbar>
+      </AppBar>
 
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
-          <Toolbar>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              <Link to="/">Hem</Link>
-            </Typography>
-            <Typography variant="h6" component="div">
-              <Link to="/posts">Alla inlägg</Link>
-            </Typography>
-            <Typography variant="h6" component="div">
-              <Link to="/posts/new">Skapa inlägg</Link>
-            </Typography>
-          </Toolbar>
-        </AppBar>
-      </Box>
-      <div>
+      <Container sx={{ marginTop: '6rem' }}>
         <Routes>
           <Route exact path="/" element={<Home></Home>}></Route>
           <Route exact path="/posts" element={<Posts></Posts>}></Route>
@@ -51,7 +51,7 @@ function App() {
             path="/posts/:id"
             element={<PostDetail></PostDetail>}></Route>
         </Routes>
-      </div>
+      </Container>
     </div>
   );
 }

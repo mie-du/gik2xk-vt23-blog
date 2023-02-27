@@ -9,7 +9,7 @@ function TagList() {
     getAll().then((tags) => setTags(tags));
   }, []);
   return (
-    <ul>
+    <ul style={{ display: 'flex', gap: '0.3rem' }}>
       {tags &&
         tags.map((tag) => {
           return (

@@ -5,16 +5,22 @@ function CommentForm({ onSave }) {
   const [comment, setComment] = useState({ title: '', body: '' });
 
   return (
-    <form>
+    <form style={{ width: '100%' }}>
       <TextField
+        fullWidth
+        margin="normal"
         label="Rubrik"
         name="title"
         value={comment.title}
         onChange={(e) => setComment({ ...comment, title: e.target.value })}
       />
       <TextField
+        fullWidth
+        margin="normal"
         label="Kommentar"
         name="body"
+        multiline
+        minRows="4"
         value={comment.body}
         onChange={(e) => setComment({ ...comment, body: e.target.value })}
       />

@@ -1,11 +1,14 @@
+import { List } from '@mui/material';
+import Comment from './Comment';
+
 function CommentList({ comments }) {
   return (
-    <>
+    <List>
       {comments &&
         comments.map((comment, i) => (
-          <p key={`commentId_${i}`}>{comment.title}</p>
+          <Comment key={`comment_${i}`} comment={comment} />
         ))}
-    </>
+    </List>
   );
 }
 

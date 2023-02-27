@@ -13,13 +13,15 @@ function PostList({ pathname }) {
   return (
     <ul>
       {posts &&
-        posts.map((post) => {
-          return (
-            <li key={`postId_${post.id}`}>
-              <PostItemSmall post={post} />
-            </li>
-          );
-        })}
+        posts
+          .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+          .map((post) => {
+            return (
+              <li key={`postId_${post.id}`}>
+                <PostItemSmall post={post} />
+              </li>
+            );
+          })}
     </ul>
   );
 }

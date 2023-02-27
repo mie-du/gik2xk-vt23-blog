@@ -14,7 +14,7 @@ function UserList() {
         users.map((user) => {
           return (
             <li key={`userId_${user.id}`}>
-              <UserItemSmall user={user} />
+              <UserItemSmall style={{ marginBottom: '1rem' }} user={user} />
             </li>
           );
         })}
