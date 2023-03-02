@@ -11,28 +11,29 @@ const theme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#a25593'
+      main: '#986eb1'
     },
     secondary: {
-      main: '#7c9862'
-    },
-    success: {
-      main: '#388e3c'
+      main: '#9ed46b',
+      contrastText: '#0f4c13'
     }
   },
   typography: {
     fontFamily: '"Ubuntu", "Roboto", "Helvetica", "Arial", sans-serif',
     h1: {
-      fontFamily: '"Phudu", "Roboto", "Helvetica", "Arial", sans-serif',
-      fontSize: '2.6rem'
+      fontFamily: 'Lobster',
+      fontSize: '3.7rem'
     },
     h2: {
-      fontSize: '2.2rem',
-      marginBottom: '0.5em'
+      fontSize: '2.1rem',
+      marginBottom: '.7em'
     },
     h3: {
-      fontSize: '1.7rem',
-      color: '#713B66'
+      fontSize: '1.6rem'
+    },
+    h4: {
+      fontSize: '1.3rem',
+      color: 'rgb(106, 77, 123)'
     }
   }
 });

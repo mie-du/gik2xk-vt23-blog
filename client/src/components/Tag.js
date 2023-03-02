@@ -1,16 +1,16 @@
 import { Chip } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Tag({ tagName }) {
+  const navigate = useNavigate();
   return (
     <>
-      <Link to={`/tags/${tagName}/posts`}>
-        <Chip
-          color="secondary"
-          sx={{ cursor: 'pointer' }}
-          key={tagName}
-          label={tagName}></Chip>
-      </Link>
+      <Chip
+        onClick={() => navigate(`/tags/${tagName}/posts`)}
+        color="primary"
+        sx={{ cursor: 'pointer' }}
+        key={tagName}
+        label={tagName}></Chip>
     </>
   );
 }

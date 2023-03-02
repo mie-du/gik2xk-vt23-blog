@@ -37,7 +37,7 @@ function PostDetail() {
           gap=".3rem">
           <Button
             startIcon={<ChevronLeftIcon />}
-            color="primary"
+            color="secondary"
             onClick={() => {
               navigate(-1);
             }}
@@ -47,7 +47,7 @@ function PostDetail() {
 
           <Link to={`/posts/${postId}/edit`}>
             <Button
-              color="primary"
+              color="secondary"
               startIcon={<EditIcon />}
               variant="contained">
               Ändra

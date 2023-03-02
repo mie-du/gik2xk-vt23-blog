@@ -17,7 +17,11 @@ function PostItemLarge({ post }) {
     <CustomPaper sx={{ marginBottom: '1rem' }}>
       <Card elevation={0} sx={{ background: 'transparent' }}>
         <CardHeader
-          title={<Typography variant="h3">{post.title}</Typography>}
+          title={
+            <Typography variant="h5" component="h3">
+              {post.title}
+            </Typography>
+          }
           subheader={`Skrivet: ${toDateTimeString(post.createdAt)}`}
           avatar={<UserItemSmall user={post.author} />}></CardHeader>
         <CardMedia

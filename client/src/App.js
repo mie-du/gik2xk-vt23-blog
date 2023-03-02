@@ -13,14 +13,14 @@ function App() {
       <AppBar position="fixed">
         <Toolbar>
           <Box sx={{ flexGrow: 1 }}>
-            <Typography variant="h1" component="h1">
-              <Link to="/">GIK2XK Blogg</Link>
+            <Typography variant="h1">
+              <Link to="/">Blogg</Link>
             </Typography>
           </Box>
-          <Typography marginRight="1rem" variant="h6" component="div">
+          <Typography variant="h3" sx={{ marginRight: '1rem' }}>
             <Link to="/posts">Alla inlägg</Link>
           </Typography>
-          <Typography variant="h6" component="div">
+          <Typography variant="h3">
             <Link to="/posts/new">Skapa inlägg</Link>
           </Typography>
         </Toolbar>

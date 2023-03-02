@@ -22,7 +22,7 @@ function PostItemSmall({ post }) {
       <Card elevation={0} sx={{ background: 'transparent' }}>
         <CardHeader
           title={
-            <Typography variant="h3">
+            <Typography variant="h5" component="h3">
               <Link to={`/posts/${post.id}`}>{post.title}</Link>
             </Typography>
           }
